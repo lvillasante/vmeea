@@ -1,0 +1,64 @@
+ion-content {
+    
+    // --background: url("../../../assets/bg-eolico.svg")  no-repeat top center;
+    // background: url("../../../assets/bg-eolico.svg") no-repeat top center; 
+    --ion-background-color: #e8e8e8;
+
+
+    .title-page{ 
+        // color: #fff; 
+        font-weight: bold;
+    }
+
+    .layers{
+        margin-top: 0 !important;
+    }
+    ion-col > ion-item {
+      background-color: #f7f7f7;
+      border: solid 1px #ddd;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    ion-input.bg-input{ 
+      background-color: #fff !important;
+      border-top: 2px solid #e8e8e8;      
+      border-bottom: 2px solid #e8e8e8;
+      padding-left: 15px !important;
+    }
+    ion-item.ion-item item-inner { padding: 0 !important; }
+
+ }
+
+ion-select {
+  min-width: 90%;
+  // padding-left: 0;
+  // padding-left: 10px !important;
+}
+
+/* Set the placeholder color and opacity */
+ion-select::part(placeholder) {
+  // color: #20a08a;
+  color: #087b35;
+  opacity: 1;
+}
+
+/*
+ * Set the font of the first letter of the placeholder
+ * Shadow parts work with pseudo-elements, too!
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+ */
+ion-select::part(placeholder)::first-letter {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* Set the text color */
+ion-select::part(text) {
+  color: #d05c1a;
+}
+
+/* Set the icon color and opacity */
+ion-select::part(icon) {
+  color: #ec681d;
+  opacity: 1;
+}

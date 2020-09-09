@@ -1,0 +1,7 @@
+{
+  "name": "vientos-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Eólica - Solar
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+	<ion-grid>
+	    <ion-row>
+	      <ion-col size="6">
+	        <div class="animate__animated animate__backInUp animate__faster">
+	          <ion-button color="light" shape="round" size="full" routerLink="/info-solar">
+	            <ion-icon slot="start" name="layers-outline" ></ion-icon>
+	            Capas
+	          </ion-button>
+	        </div>
+	      </ion-col>
+        <ion-col size="6">
+          <div class="animate__animated animate__backInUp animate__fast">
+            <ion-button color="light" shape="round" size="full" (click)="abrirModalLeyendas()">
+              <ion-icon slot="start" name="list-circle-outline"></ion-icon>
+              <!-- <ion-icon slot="start" name="search"></ion-icon> -->
+              Leyendas
+            </ion-button>
+          </div>
+        </ion-col>
+	    </ion-row>
+  	</ion-grid>
+
+  	 <ion-list lines="none" class="ion-no-padding animate__animated animate__backInDown animate__slow">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./assets/click.svg" (click)="abrirModalSolar()">
+          </ion-avatar>
+          <ion-label>
+            <p class="ion-text-wrap">Puede "presionar" en alguna sección del mapa para obtener más información SOLAR. </p>
+          </ion-label>
+        </ion-item>
+    </ion-list>
+
+	<section class="full-width">
+		<div id="mapsolar" class="map">
+      
+			<!-- image DEMO Google maps -->
+			<!-- <img src="./assets/screenshot-google-maps.png"> -->
+
+			<!-- iframe DEMO Google Maps -->
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5685.614322911429!2d-68.13453461815892!3d-16.494089825266325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1592334138688!5m2!1ses!2sbo" width="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+		</div>
+	</section>
+
+</ion-content>

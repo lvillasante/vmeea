@@ -1,0 +1,28 @@
+ion-content {
+    // --background: url("../../../assets/bg-eolico-solar-01.svg");
+    // --background-repeat: no-repeat;
+    // --background-position: center center;
+    // --background-size: cover;
+    
+    --background: url("../../../assets/bg-eolico-solar-01.svg")  no-repeat cover fixed center;
+    background: url("../../../assets/bg-eolico-solar-01.svg") no-repeat fixed center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+    // --ion-background-color: #e8e8e8;
+
+    .title-page{ 
+        // color: #fff; 
+        font-weight: bold;
+    }
+
+    ion-img.logo-portada {
+         max-width: 80%;
+         // border: 1px solid #3b557c;
+         text-align: center;
+         // border-radius: 4px;
+         margin-left: 10%;
+         margin-top: 10%;
+    }
+ }

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información Eólica</ion-title>
+    <ion-buttons slot="end">
+	    <ion-button (click)="SalirModal()">Cerrar</ion-button>
+	  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+	<ion-label>
+        <p class="ion-text-wrap">Qué tipo de gráfico quiere ver? </p>
+    </ion-label>
+
+	<!-- <ion-button class="ion-margin-top" color="light" shape="round" size="large" expand="block" routerLink="/inicio">
+		Curva de Weibull
+	</ion-button> -->
+	<ion-item detail routerLink="/reporte-weibull" (click)="SalirModal()">
+	  <ion-avatar slot="start">
+	  	<ion-icon class="ion-3x" name="trending-up-outline" ></ion-icon>
+	  </ion-avatar>
+	  <ion-label>
+	    <h1>Curva de Weibull</h1>
+	    <p>Distribución de probabilidad continua</p>
+	  </ion-label>
+	</ion-item>
+
+	<!-- <ion-button class="ion-margin-top" color="light" shape="round" size="large" expand="block" routerLink="">
+		Rosa de Vientos
+	</ion-button> -->
+	<ion-item detail routerLink="/reporte-rosa" (click)="SalirModal()">
+	  <ion-avatar slot="start">
+	  	<ion-icon class="ion-3x" name="medical-outline" ></ion-icon>
+	  </ion-avatar>
+	  <ion-label>
+	    <h1>Rosa de Vientos</h1>
+	    <p>Visualización de patrones del viento</p>
+	  </ion-label>
+	</ion-item>
+
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+		<ion-button routerLink="/inicio">
+			<ion-icon slot="icon-only" name="home"></ion-icon>
+		</ion-button>
+    </ion-buttons>
+    <ion-title>
+      Eólica - Solar
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<!-- <ion-list class="ion-no-padding">
+	    <ion-list-header translucent="true" color="transparent">
+	      <div class="ion-text-center">
+	        Inicio
+	      </div>
+	    </ion-list-header>
+	</ion-list> -->
+	<ion-item color="transparent" lines="none" class="title-page">
+		<ion-label>
+			<div class="ion-text-center">
+				INICIO
+			</div> 
+		</ion-label>
+	</ion-item>
+
+	<ion-item class="ion-margin-top item-info" color="transparent">
+		<ion-label>
+			<div class="ion-text-wrap ">
+				A continuación se puede seleccionar el tipo de información con el que quiere trabajar:
+			</div> 
+		</ion-label>
+	</ion-item>
+
+	<ion-grid>
+	    <ion-row>
+	      <ion-col size="6">
+	        <ion-button expand="full" class="btn-info animate__animated animate__backInUp animate__faster" color="tertiary" fill="clear" routerLink="/info-eolica">
+	          <div>
+	            <!-- <ion-img src="/assets/icon-calendar.svg"></ion-img> -->
+	            <ion-icon class="iconSize" name="medical-outline"></ion-icon>
+	            Eólica
+	          </div>
+	        </ion-button>
+	      </ion-col>
+
+	      <ion-col size="6">
+	        <ion-button expand="full" class="btn-info animate__animated animate__backInUp animate__fast" color="tertiary" fill="clear" routerLink="/info-solar">
+	          <div>
+	            <!-- <ion-img src="/assets/icon-notificacion.svg"></ion-img> -->
+	            <ion-icon class="iconSize" name="sunny-outline"></ion-icon>
+	            Solar
+	          </div>
+	        </ion-button>
+	      </ion-col>
+	    </ion-row>
+    
+
+  </ion-grid>
+
+</ion-content>

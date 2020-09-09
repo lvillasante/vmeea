@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Eólica - Solar
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-item color="transparent" lines="none" class="title-page">
+		<ion-label>
+			<div class="ion-text-center">
+				INFORMACIÓN SOLAR
+			</div> 
+		</ion-label>
+	</ion-item>
+
+	<ion-card mode="ios" color="secondary" class="layers animate__animated animate__backInUp animate__slow">
+	  <ion-card-content>
+		<!-- <ion-list>
+		  <ion-item lines="none">
+		    <ion-label>Ubicación actual</ion-label>
+		    <ion-toggle color="light"></ion-toggle>
+		  </ion-item>
+
+		  <ion-item lines="none">
+		    <ion-label class="ion-text-wrap ">
+		    	<ion-text color="danger">Ayuda: </ion-text> Si desactiva esta opción, se mostrará el mapa de toda Bolivia
+		    </ion-label>
+		  </ion-item>
+		</ion-list> -->
+		<ion-list>
+		  <ion-radio-group value="" [(ngModel)]="content">
+
+		    <ion-item>
+		      <ion-label>Toda Bolivia</ion-label>
+		      <ion-radio slot="start" value="opt1" ></ion-radio>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label>Mi ubicación actual (GPS)</ion-label>
+		      <ion-radio slot="start" value="opt2"></ion-radio>
+		    </ion-item>
+
+		    <ion-item lines="none">
+		      <ion-label>Introducir LAT LONG</ion-label>
+		      <ion-radio slot="start" value="opt3" (ionSelect)="radioChecked()"></ion-radio>
+		    </ion-item>
+		  </ion-radio-group>
+		</ion-list>
+
+		<!-- <h *ngIf="content=='opt1'"> Option 1</h>
+    	<h *ngIf="content=='opt2'"> Option 2</h> -->
+    	
+		<div *ngIf="content=='opt3'" class="info-cordenadas animate__animated animate__pulse">
+		    <ion-list-header class="ion-no-padding">
+		      <ion-label class="ion-no-margin ion-text-center" color="light">Introducir coordenadas</ion-label>
+		    </ion-list-header>
+			<ion-item calss="custom-item-lat"> 
+          		<ion-label position="fixed"> Latitud: </ion-label>
+  				<ion-input class="bg-input" type="number" placeholder="-17.279531"></ion-input>
+        	</ion-item>
+        	<ion-item lines="none"> 
+          		<ion-label position="fixed"> Longitud: </ion-label>
+  				<ion-input class="bg-input" type="number" placeholder="-64.720891"></ion-input>
+        	</ion-item>	
+    	</div>
+
+
+	  </ion-card-content>
+	</ion-card>
+
+	<ion-card mode="ios" color="secondary" class="layers animate__animated animate__backInUp animate__slow">
+	  <ion-card-header>
+	    <ion-card-subtitle class="ion-text-center">Seleccione una capa de largo Plazo</ion-card-subtitle>
+	  </ion-card-header>
+
+	  <ion-card-content class="ion-no-padding">
+		<ion-item lines="none"> 
+          <!-- <ion-label color="light">Capa</ion-label> -->
+          <ion-select color="light" ok-text="Ok" cancel-text="Cancelar" placeholder="Seleccione una">
+            <ion-select-option color="light" value="opt1">Irradación Horizontal Global (IGH)</ion-select-option>
+            <ion-select-option value="opt2">Irradación Normal Directa (DNI)</ion-select-option>
+            <ion-select-option value="opt3">Irradación Horizontal Difusa (DHI)</ion-select-option>
+            <ion-select-option value="opt4">Temperatura</ion-select-option>
+          </ion-select>
+        </ion-item>
+	  </ion-card-content>
+	</ion-card>
+
+	<ion-card mode="ios" color="secondary" class="layers animate__animated animate__backInUp animate__slow">
+	  <ion-card-header>
+	    <ion-card-subtitle class="ion-text-center">Seleccione la capa por periodo de tiempo</ion-card-subtitle>
+	  </ion-card-header>
+
+	  <ion-card-content class="ion-no-padding">
+		<ion-item lines="none"> 
+          <!-- <ion-label color="light">Tiempo</ion-label> -->
+          <ion-select color="light" ok-text="Ok" cancel-text="Cancelar" placeholder="Seleccione una">
+            <ion-select-option color="light" value="opt1">ANUAL</ion-select-option>
+            <ion-select-option value="opt2"> Enero</ion-select-option>
+            <ion-select-option value="opt3"> Febrero</ion-select-option>
+            <ion-select-option value="opt4"> Marzo</ion-select-option>
+            <ion-select-option value="opt5"> Abril</ion-select-option>
+            <ion-select-option value="opt6"> Mayo</ion-select-option>
+            <ion-select-option value="opt7"> Junio</ion-select-option>
+            <ion-select-option value="opt8"> Julio</ion-select-option>
+            <ion-select-option value="opt9"> Agosto</ion-select-option>
+            <ion-select-option value="opt10"> Septiembre</ion-select-option>
+            <ion-select-option value="opt11"> Octubre</ion-select-option>
+            <ion-select-option value="opt12"> Noviembre</ion-select-option>
+            <ion-select-option value="opt13"> Diciembre</ion-select-option>
+          </ion-select>
+        </ion-item>
+	  </ion-card-content>
+	</ion-card>
+
+	<!-- <ion-card mode="ios" color="secondary" class="animate__animated animate__backInUp animate__slow">
+	  <ion-card-content>
+		<ion-list>
+		  <ion-item lines="none">
+		    <ion-label>Ubicación actual</ion-label>
+		    <ion-toggle checked color="light"></ion-toggle>
+		  </ion-item>
+
+		  <ion-item lines="none">
+		    <ion-label class="ion-text-wrap ">
+		    	<ion-text color="danger">Ayuda: </ion-text> Si desactiva esta opción, se mostrará el mapa de toda Bolivia
+		    </ion-label>
+		  </ion-item>
+		</ion-list>
+	  </ion-card-content>
+	</ion-card>
+
+	<ion-card mode="ios" color="secondary" class="animate__animated animate__backInUp animate__slow">
+	  <ion-card-header>
+	    <ion-card-subtitle class="ion-text-center">Introducir coordenadas</ion-card-subtitle>
+	  </ion-card-header>
+
+	  <ion-card-content class="ion-no-padding">
+		<ion-item > 
+          	<ion-label position="fixed"> Latitud: </ion-label>
+  			<ion-input type="number" disable placeholder="-17.279531"></ion-input>
+        </ion-item>
+        <ion-item lines="none"> 
+          	<ion-label position="fixed"> Longitud: </ion-label>
+  			<ion-input type="number" disable placeholder="-64.720891"></ion-input>
+        </ion-item>
+	  </ion-card-content>
+	</ion-card> -->
+
+	<div class="ion-text-center ion-margin-bottom ion-margin-top animate__animated animate__backInDown animate__slow">
+	    <ion-button color="light" shape="round" size="" routerLink="/mapa-solar">
+	      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+	      Aplicar
+	    </ion-button>
+  	</div>
+
+</ion-content>

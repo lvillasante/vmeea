@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información Solar</ion-title>
+    <ion-buttons slot="end">
+	    <ion-button (click)="SalirModal()">Cerrar</ion-button>
+	  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+	<ion-list>
+		<ion-item>
+			<ion-label>GHI: </ion-label>
+			<ion-note slot="end" color="light">12345</ion-note>
+		</ion-item>
+		<ion-item>
+			<ion-label>DNI: </ion-label>
+			<ion-note slot="end" color="light">12345</ion-note>
+		</ion-item>
+		<ion-item>
+			<ion-label>DHI: </ion-label>
+			<ion-note slot="end" color="light">12345</ion-note>
+		</ion-item>
+	</ion-list>
+
+	<div class="ion-text-center ion-margin-bottom ion-margin-top">
+	    	<ion-button color="light" shape="round" size="full" routerLink="/mapa-solar" (click)="SalirModal()">
+	    		<!-- <ion-icon slot="start" name="download-outline"></ion-icon> -->
+				<ion-icon slot="start" name="cloud-download-outline"></ion-icon>
+				Descargar en PDF
+	        </ion-button>
+  	</div>
+
+
+</ion-content>

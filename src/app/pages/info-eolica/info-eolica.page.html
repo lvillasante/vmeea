@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Eólica - Solar
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-item color="transparent" lines="none" class="title-page">
+		<ion-label>
+			<div class="ion-text-center">
+				INFORMACIÓN EÓLICA
+			</div> 
+		</ion-label>
+	</ion-item>
+
+	<ion-card mode="ios" color="secondary" class="layers animate__animated animate__backInUp animate__slow">
+	  <ion-card-content>
+		<!-- <ion-list>
+		  <ion-item lines="none">
+		    <ion-label>Ubicación actual</ion-label>
+		    <ion-toggle color="light"></ion-toggle>
+		  </ion-item>
+
+		  <ion-item lines="none">
+		    <ion-label class="ion-text-wrap ">
+		    	<ion-text color="danger">Ayuda: </ion-text> Si desactiva esta opción, se mostrará el mapa de toda Bolivia
+		    </ion-label>
+		  </ion-item>
+		</ion-list> -->
+		<ion-list>
+		  <ion-radio-group value="" [(ngModel)]="content">
+
+		    <ion-item>
+		      <ion-label>Toda Bolivia</ion-label>
+		      <ion-radio slot="start" value="opt1" ></ion-radio>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label>Mi ubicación actual (GPS)</ion-label>
+		      <ion-radio slot="start" value="opt2"></ion-radio>
+		    </ion-item>
+
+		    <ion-item lines="none">
+		      <ion-label>Introducir LAT LONG</ion-label>
+		      <ion-radio slot="start" value="opt3" (ionSelect)="radioChecked()"></ion-radio>
+		    </ion-item>
+		  </ion-radio-group>
+		</ion-list>
+
+		<!-- <h *ngIf="content=='opt1'"> Option 1</h>
+    	<h *ngIf="content=='opt2'"> Option 2</h> -->
+    	
+		<div *ngIf="content=='opt3'" class="info-cordenadas animate__animated animate__pulse">
+		    <ion-list-header class="ion-no-padding">
+		      <ion-label class="ion-no-margin ion-text-center" color="light">Introducir coordenadas</ion-label>
+		    </ion-list-header>
+			<ion-item calss="custom-item-lat"> 
+          		<ion-label position="fixed"> Latitud: </ion-label>
+  				<ion-input class="bg-input" type="number" placeholder="-17.279531"></ion-input>
+        	</ion-item>
+        	<ion-item lines="none"> 
+          		<ion-label position="fixed"> Longitud: </ion-label>
+  				<ion-input class="bg-input" type="number" placeholder="-64.720891"></ion-input>
+        	</ion-item>	
+    	</div>
+
+
+	  </ion-card-content>
+	</ion-card>
+
+	<!-- <ion-card mode="ios" color="secondary" class="animate__animated animate__backInUp animate__slow">
+	  <ion-card-header>
+	    <ion-card-subtitle class="ion-text-center">Introducir coordenadas</ion-card-subtitle>
+	  </ion-card-header>
+
+	  <ion-card-content class="ion-no-padding">
+		
+	  </ion-card-content>
+	</ion-card> -->
+
+	<ion-card mode="ios" color="secondary" class="layers animate__animated animate__backInUp animate__slow">
+	  <ion-card-header>
+	    <ion-card-subtitle class="ion-text-center">Seleccione una capa</ion-card-subtitle>
+	  </ion-card-header>
+
+	  <ion-card-content class="ion-no-padding">
+		<ion-item lines="none"> 
+          <!-- <ion-label color="light">Capa</ion-label> -->
+          <ion-select color="light" ok-text="Ok" cancel-text="Cancelar" class="color-brand" placeholder="Seleccione una">
+            <ion-select-option color="light" value="va1">Velocidad media anual en m.</ion-select-option>
+            <ion-select-option value="va2">Densidad del Aire [kg/m3]</ion-select-option>
+            <ion-select-option value="va3">Densidad del Potencia [W/2]</ion-select-option>
+          </ion-select>
+        </ion-item>
+	  </ion-card-content>
+	</ion-card>
+
+	<ion-card mode="ios" color="secondary" class="animate__animated animate__backInUp animate__slow">
+	  <ion-card-header>
+	    <ion-card-subtitle class="ion-text-center">Seleccione una altura</ion-card-subtitle>
+	  </ion-card-header>
+
+	  <ion-card-content class="ion-no-padding">
+	  		<ion-radio-group value="biff" mode="ios">
+				<ion-grid>
+					<ion-row>
+					    <ion-col size="6">
+					      	<ion-item lines="none">
+						      <ion-label>40 m.</ion-label>
+						      <ion-radio slot="start" color="light" value="40m"></ion-radio>
+	    					</ion-item>
+					    </ion-col>
+					    <ion-col size="6">
+					    	<ion-item lines="none">
+						      <ion-label>60 m.</ion-label>
+						      <ion-radio slot="start" color="light" value="60m"></ion-radio>
+	    					</ion-item>
+					    </ion-col>
+					</ion-row>
+					<ion-row>
+					    <ion-col size="6">
+					      	<ion-item lines="none">
+						      <ion-label>80 m.</ion-label>
+						      <ion-radio slot="start" color="light" value="80m"></ion-radio>
+	    					</ion-item>
+					    </ion-col>
+					    <ion-col size="6">
+					    	<ion-item lines="none">
+						      <ion-label>100 m.</ion-label>
+						      <ion-radio slot="start" color="light" value="100m"></ion-radio>
+	    					</ion-item>
+					    </ion-col>
+					</ion-row>
+					<ion-row>
+					    <ion-col size="6">
+					      	<ion-item lines="none">
+						      <ion-label>120 m.</ion-label>
+						      <ion-radio slot="start" color="light" value="120m"></ion-radio>
+	    					</ion-item>
+					    </ion-col>
+					    <ion-col size="6">
+					    	<ion-item lines="none">
+						      <ion-label>140 m.</ion-label>
+						      <ion-radio slot="start" color="light" value="140m"></ion-radio>
+	    					</ion-item>
+					    </ion-col>
+					</ion-row>
+				</ion-grid>
+			</ion-radio-group>
+	  </ion-card-content>
+	</ion-card>
+
+	<div class="ion-text-center ion-margin-bottom ion-margin-top animate__animated animate__backInDown animate__slow">
+	    <ion-button color="light" shape="round" size="" routerLink="/mapa-eolico">
+	      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+	      Aplicar
+	    </ion-button>
+  	</div>
+
+</ion-content>
